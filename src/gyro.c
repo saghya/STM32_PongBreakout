@@ -9,5 +9,12 @@ void gyroInit()
         printMsg("ERROR WITH GYRO");
         return;
     }
-    printMsg("TEST");
+    BSP_GYRO_Reset();
+}
+
+float getXFromGyro()
+{
+    float buffer[3];
+    BSP_GYRO_GetXYZ(buffer);
+    return buffer[0];
 }

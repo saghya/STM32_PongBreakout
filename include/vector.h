@@ -2,7 +2,7 @@
 #include <stdint.h>
 
 typedef struct coordinate{
-    int8_t x, y;
+    int32_t x, y;
 } coordinate;
 
 coordinate sumVector(coordinate vector_a, coordinate vector_b);

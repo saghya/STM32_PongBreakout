@@ -1,7 +1,9 @@
 #include "stm32f4xx_hal.h"
 #include "display.h"
+#include "gyro.h"
+#include "ball.h"
+#include <stdio.h>
 #include "stm32f429i_discovery.h"
-
 
 static void SystemClock_Config(void);
 
@@ -12,15 +14,20 @@ int main()
     __HAL_DBGMCU_FREEZE_IWDG();
     //BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_EXTI);
     displayInit();
+    gyroInit();
     menu();
-    printMsg("ERROR");
+    HAL_Delay(500);
     BSP_LED_Init(LED3);
     BSP_LED_Init(LED4);
+    ball ball;
+    initBall(&ball);
+    drawBall(ball);
     while (1)
     {
-        BSP_LED_Toggle(LED4);
-        BSP_LED_Toggle(LED3);
-        HAL_Delay(100);
+
+        drawBall(ball);
+        stepBall(&ball);
+        HAL_Delay(5);
     }
 }
 
