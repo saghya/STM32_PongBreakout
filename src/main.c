@@ -13,6 +13,7 @@ int main()
     //BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_EXTI);
     displayInit();
     menu();
+    printMsg("ERROR");
     BSP_LED_Init(LED3);
     BSP_LED_Init(LED4);
     while (1)
