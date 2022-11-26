@@ -12,7 +12,7 @@ int main()
     __HAL_DBGMCU_FREEZE_IWDG();
     //BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_EXTI);
     displayInit();
-    //menu();
+    menu();
     BSP_LED_Init(LED3);
     BSP_LED_Init(LED4);
     while (1)
