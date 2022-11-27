@@ -27,9 +27,11 @@ void stepBall(ball *ball)
     if(ball->position.x + RAD >= WIDTH || ball->position.x - RAD < 0)
     {
         ball->position.x *= -1;
+        ball->direction_vector.x *= -1;
     }
     if(ball->position.y + RAD >= HEIGHT || ball->position.y - RAD < 0)
     {
         ball->position.y *= -1;
+        ball->direction_vector.y *= -1;
     }
 }
