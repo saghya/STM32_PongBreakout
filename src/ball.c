@@ -14,9 +14,11 @@ void drawBall(ball ball)
     {
         return;
     }
-    BSP_LCD_SelectLayer(LCD_FOREGROUND_LAYER);
+    selectInactiveLayer();
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
     BSP_LCD_Clear(LCD_COLOR_WHITE);
     BSP_LCD_FillCircle(ball.position.x,ball.position.y,RAD);
+    swapDisplayedLayer();
 }
 
 void stepBall(ball *ball)

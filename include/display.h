@@ -7,3 +7,5 @@
 void displayInit();
 void menu();
 void printMsg(uint8_t *);
+void swapDisplayedLayer();
+void selectInactiveLayer();

@@ -25,9 +25,10 @@ int main()
     while (1)
     {
 
+        
         drawBall(ball);
         stepBall(&ball);
-        HAL_Delay(5);
+        HAL_Delay(10);
     }
 }
 
