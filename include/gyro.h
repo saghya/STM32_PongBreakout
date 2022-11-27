@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 void gyroInit();
-float getXFromGyro();
+int8_t getXFromGyro();

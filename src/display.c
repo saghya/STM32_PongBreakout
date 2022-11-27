@@ -32,7 +32,10 @@ void menu()
     BSP_LCD_Clear(LCD_COLOR_WHITE);
     BSP_LCD_SetFont(&LCD_DEFAULT_FONT);
     BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
+    BSP_LCD_DisplayStringAt(0,HEIGHT/8,(uint8_t *)"BOUNCEY",CENTER_MODE);
     BSP_LCD_DisplayStringAt(0,HEIGHT/4,(uint8_t *)"MENU",CENTER_MODE);
+    BSP_LCD_DisplayStringAt(0,2*HEIGHT/4,(uint8_t *)"START",CENTER_MODE);
+    BSP_LCD_DisplayStringAt(0,7*HEIGHT/8,(uint8_t *)"V1.0",CENTER_MODE);
     swapDisplayedLayer();
 }
 

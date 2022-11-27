@@ -15,7 +15,10 @@ void drawBall(ball ball)
         return;
     }
     selectInactiveLayer();
-    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    if(BSP_LCD_GetTextColor()!=LCD_COLOR_BLACK)
+    {
+        BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    }
     BSP_LCD_Clear(LCD_COLOR_WHITE);
     BSP_LCD_FillCircle(ball.position.x,ball.position.y,RAD);
     swapDisplayedLayer();
