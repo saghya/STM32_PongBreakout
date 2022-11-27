@@ -23,7 +23,7 @@ int main()
     initBall(&ball);
     while (1)
     {
-        if(HAL_GetTick()%4==0)
+        if(HAL_GetTick()%2==0)
         {
             drawBall(ball);
             stepBall(&ball);

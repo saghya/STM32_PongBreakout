@@ -17,7 +17,8 @@ void swapDisplayedLayer()
     activeLayer = !activeLayer;
     BSP_LCD_SetLayerVisible_NoReload(activeLayer,ENABLE);
     BSP_LCD_SetLayerVisible_NoReload(!activeLayer,DISABLE);
-    BSP_LCD_Relaod(LCD_RELOAD_VERTICAL_BLANKING);
+    while(!(LTDC->CDSR & LTDC_CDSR_VSYNCS));
+    BSP_LCD_Relaod(LCD_RELOAD_IMMEDIATE);
 }
 
 void selectInactiveLayer()

@@ -21,11 +21,11 @@ int8_t getXFromGyro()
         BSP_GYRO_GetXYZ(buffer[i]);
     }
     float avg = (buffer[0][1]+buffer[1][1]+buffer[2][1])/3;
-    if(avg>2000)
+    if(avg>3000)
     {
         return 1;
     }
-    else if(avg<-2000)
+    else if(avg<-3000)
     {
         return -1;
     }

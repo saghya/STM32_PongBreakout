@@ -5,7 +5,7 @@
 void initBall(ball *ball)
 {
     ball->position = (coordinate){WIDTH/2,HEIGHT/2};
-    ball->direction_vector = (coordinate){0,1};
+    ball->direction_vector = (coordinate){0,3};
 }
 
 void drawBall(ball ball)
