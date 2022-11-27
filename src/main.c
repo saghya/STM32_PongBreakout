@@ -14,20 +14,21 @@ int main()
     __HAL_DBGMCU_FREEZE_IWDG();
     //BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_EXTI);
     displayInit();
+    BSP_LED_Init(LED3);
+    BSP_LED_Init(LED4);
     gyroInit();
     menu();
     HAL_Delay(500);
-    BSP_LED_Init(LED3);
-    BSP_LED_Init(LED4);
     ball ball;
     initBall(&ball);
-    drawBall(ball);
     while (1)
     {
-
-        drawBall(ball);
-        stepBall(&ball);
-        HAL_Delay(5);
+        if(HAL_GetTick()%2==0)
+        {
+            drawBall(ball);
+            stepBall(&ball);
+        }
+        ball.direction_vector.x = getXFromGyro();
     }
 }
 
